@@ -22,6 +22,10 @@ namespace Pirozjki_3._0
 
         }
 
+        //-----------------------------------------
+        //Создание списка для ингредиентов (можно потом убрать, переписав пару кусков)
+        //-----------------------------------------
+
         class ingredienti
         {
             public string cto;
@@ -38,6 +42,22 @@ namespace Pirozjki_3._0
             }
         }
 
+        /*
+        class okr
+        {
+            public string telo;
+            public string par;
+            public int raz;
+
+            public okr(string t, string p, int r)
+            {
+                telo = t;
+                par = p;
+                raz = r;
+            }
+        }
+        */
+
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -49,6 +69,33 @@ namespace Pirozjki_3._0
             }
 
             int x = Convert.ToInt32(textBox1.Text);
+
+            /*
+            //-----------------------------------------
+            //ОКРУГЛЕНИЕ
+            //-----------------------------------------
+
+            List<okr> okrug = new List<okr>();
+
+            okrug.Add(new okr("Твердая", "г", 1));
+            okrug.Add(new okr("Твердая", "кг", 1000));
+
+            okrug.Add(new okr("Жидкость", "мл", 1));
+            okrug.Add(new okr("Жидкость", "л", 1000));
+
+            okr mykraz = okrug.FindAll(item => item.telo == "Твердая").Find(item => item.raz >= 0);
+            mykraz = okrug.FindAll(item => item.telo == "Твердая").Find(item => item.raz >= 1000);
+
+            if ()
+            {
+
+            }
+
+            */
+
+            //-----------------------------------------
+            //ПОДСЧЕТ ВСЕГО
+            //-----------------------------------------
 
             List<ingredienti> list = new List<ingredienti>();
 
@@ -74,7 +121,7 @@ namespace Pirozjki_3._0
 
             while (mykamas <= myka)
             {
-                if ((myka - mykamas) > 8000)
+                if ((myka - mykamas) > 9000)
                 {
                     mykamas += 10000;
                     mykasto += 335;
@@ -123,6 +170,23 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string mykaraz1;
+            string mykaraz2;
+
+            if (myka >= 1000)
+            {
+                myka /= 1000;
+                mykaraz1 = "кг";
+            }
+            else mykaraz1 = "г";
+
+            if (mykamas >= 1000)
+            {
+                mykamas /= 1000;
+                mykaraz2 = "кг";
+            }
+            else mykaraz2 = "г";
+            
             //-----------------------------------------
             //Подсчет Дрожжи
             //-----------------------------------------
@@ -172,6 +236,23 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string droraz1;
+            string droraz2;
+
+            if (droj >= 1000)
+            {
+                droj /= 1000;
+                droraz1 = "кг";
+            }
+            else droraz1 = "г";
+
+            if (dromas >= 1000)
+            {
+                dromas /= 1000;
+                droraz2 = "кг";
+            }
+            else droraz2 = "г";
+
             //-----------------------------------------
             //Подсчет Сахар
             //-----------------------------------------
@@ -209,6 +290,23 @@ namespace Pirozjki_3._0
                     }
                 }
             }
+
+            string sahraz1;
+            string sahraz2;
+
+            if (sahar >= 1000)
+            {
+                sahar /= 1000;
+                sahraz1 = "кг";
+            }
+            else sahraz1 = "г";
+
+            if (sahmas >= 1000)
+            {
+                sahmas /= 1000;
+                sahraz2 = "кг";
+            }
+            else sahraz2 = "г";
 
             //-----------------------------------------
             //Подсчет Соль
@@ -248,6 +346,23 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string solraz1;
+            string solraz2;
+
+            if (soli >= 1000)
+            {
+                soli /= 1000;
+                solraz1 = "кг";
+            }
+            else solraz1 = "г";
+
+            if (solmas >= 1000)
+            {
+                solmas /= 1000;
+                solraz2 = "кг";
+            }
+            else solraz2 = "г";
+
             //-----------------------------------------
             //Подсчет Молоко
             //-----------------------------------------
@@ -285,6 +400,23 @@ namespace Pirozjki_3._0
                     }
                 }
             }
+
+            string milraz1;
+            string milraz2;
+
+            if (milk >= 1000)
+            {
+                milk /= 1000;
+                milraz1 = "л";
+            }
+            else milraz1 = "мл";
+
+            if (milmas >= 1000)
+            {
+                milmas /= 1000;
+                milraz2 = "л";
+            }
+            else milraz2 = "мл";
 
             //-----------------------------------------
             //Подсчет Яйцо
@@ -391,6 +523,23 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string sliraz1;
+            string sliraz2;
+
+            if (slivmaslo >= 1000)
+            {
+                slivmaslo /= 1000;
+                sliraz1 = "кг";
+            }
+            else sliraz1 = "г";
+
+            if (slimas >= 1000)
+            {
+                slimas /= 1000;
+                sliraz2 = "кг";
+            }
+            else sliraz2 = "г";
+
             //-----------------------------------------
             //Подсчет Растительное масло
             //-----------------------------------------
@@ -428,6 +577,23 @@ namespace Pirozjki_3._0
                     }
                 }
             }
+
+            string rastraz1;
+            string rastraz2;
+
+            if (rastmaslo >= 1000)
+            {
+                rastmaslo /= 1000;
+                rastraz1 = "л";
+            }
+            else rastraz1 = "мл";
+
+            if (rastmas >= 1000)
+            {
+                rastmas /= 1000;
+                rastraz2 = "л";
+            }
+            else rastraz2 = "мл";
 
             //-----------------------------------------
             //Подсчет Капуста
@@ -467,6 +633,23 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string kapraz1;
+            string kapraz2;
+
+            if (kapysta >= 1000)
+            {
+                kapysta /= 1000;
+                kapraz1 = "кг";
+            }
+            else kapraz1 = "г";
+
+            if (kapmas >= 1000)
+            {
+                kapmas /= 1000;
+                kapraz2 = "кг";
+            }
+            else kapraz2 = "г";
+
             //-----------------------------------------
             //Подсчет Мясо
             //-----------------------------------------
@@ -504,6 +687,23 @@ namespace Pirozjki_3._0
                     }
                 }
             }
+
+            string myaraz1;
+            string myaraz2;
+
+            if (myaso >= 1000)
+            {
+                myaso /= 1000;
+                myaraz1 = "кг";
+            }
+            else myaraz1 = "г";
+
+            if (myamas >= 1000)
+            {
+                myamas /= 1000;
+                myaraz2 = "кг";
+            }
+            else myaraz2 = "г";
 
             //-----------------------------------------
             //Подсчет Повидло
@@ -543,6 +743,23 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string povraz1;
+            string povraz2;
+
+            if (povidlo >= 1000)
+            {
+                povidlo /= 1000;
+                povraz1 = "л";
+            }
+            else povraz1 = "мл";
+
+            if (povmas >= 1000)
+            {
+                povmas /= 1000;
+                povraz2 = "л";
+            }
+            else povraz2 = "мл";
+
             //-----------------------------------------
             //Подсчет Лук
             //-----------------------------------------
@@ -580,6 +797,23 @@ namespace Pirozjki_3._0
                     }
                 }
             }
+
+            string lyraz1;
+            string lyraz2;
+
+            if (lyk >= 1000)
+            {
+                lyk /= 1000;
+                lyraz1 = "кг";
+            }
+            else lyraz1 = "г";
+
+            if (lykmas >= 1000)
+            {
+                lykmas /= 1000;
+                lyraz2 = "кг";
+            }
+            else lyraz2 = "г";
 
             //-----------------------------------------
             //Подсчет Картофель
@@ -619,83 +853,40 @@ namespace Pirozjki_3._0
                 }
             }
 
+            string potraz1;
+            string potraz2;
 
-            /*
+            if (potato >= 1000)
+            {
+                potato /= 1000;
+                potraz1 = "кг";
+            }
+            else potraz1 = "г";
 
+            if (potmas >= 1000)
+            {
+                potmas /= 1000;
+                potraz2 = "кг";
+            }
+            else potraz2 = "г";
 
-            richTextBox1.Text = ($"" +
-                        $"Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\nСухие дрожжи - {droj} г" +
-                        $"\nСахар - {sahar} г" +
-                        $"\nСоль - {soli} г" +
-                        $"\nМолоко - {milk} мл." +
-                        $"\nЯйцо - {yaizo} шт." +
-                        $"\nСливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\nРастительное масло (для замеса теста) - {rastmaslo} мл" +
-                        $"" +
-                        $"" +
-                        $"" +
-                        $"\nКапуста - {kapysta} гр" +
-                        $"\nМясо - {myaso} гр" +
-                        $"\nПовидло - {povidlo} мл" +
-                        $"\nЯйца отварные - {yaizaotvar} шт." +
-                        $"\nЛук - {lyk} гр" +
-                        $"\nКартофель - {potato} гр");
-
-            richTextBox2.Text = ($"" +
-                                $"{myk.name}, {mykasto} руб, {mykamas} г, {mykpacket1} {mykpacket2} {mykpacket3} {mykpacket4}" +
-                                $"\n{dro.name}, {drosto} руб, {dromas} г, {dropacket1} {dropacket2}" +
-                                $"\n{sah.name}, {sahsto} руб, {sahmas} г, {dropacket1}" +
-                                $"\n{sol.name}, {solsto} руб, {solmas} г, {solpacket1}" +
-                                $"\n{mil.name}, {milsto} руб, {milmas} г, {milpacket1}" +
-                                $"\n{yai.name}, {yaisto} руб, {yaimas} г, {yaipacket1} {yaipacket2}" +
-                                $"\n{sli.name}, {slisto} руб, {slimas} г, {slipacket1} {slipacket2}" +
-                                $"\n{rast.name}, {raststo} руб, {rastmas} г, {rastpacket1}" +
-                                $"\n{kap.name}, {kapsto} руб, {kapmas} г, {kappacket1}" +
-                                $"\n{mya.name}, {myasto} руб, {myamas} г, {myapacket1}" +
-                                $"\n{pov.name}, {povsto} руб, {povmas} г, {povpacket1}" +
-                                $"\n{ly.name}, {lyksto} руб, {lykmas} г, {lykpacket1}" +
-                                $"\n{pot.name}, {potsto} руб, {potmas} г, {potpacket1}");
-
-            
-                    richTextBox2.Text = ($"" +
-                                $"{myk.name}, {mykasto} руб, {mykamas} г, {mykpacket1} {mykpacket2} {mykpacket3} {mykpacket4}" +
-                                $"\n{dro.name}, {drosto} руб, {dromas} г, {dropacket1} {dropacket2}" +
-                                $"\n{sah.name}, {sahsto} руб, {sahmas} г, {dropacket1}" +
-                                $"\n{sol.name}, {solsto} руб, {solmas} г, {solpacket1}" +
-                                $"\n{mil.name}, {milsto} руб, {milmas} г, {milpacket1}" +
-                                $"\n{yai.name}, {yaisto} руб, {yaimas} г, {yaipacket1} {yaipacket2}" +
-                                $"\n{sli.name}, {slisto} руб, {slimas} г, {slipacket1} {slipacket2}" +
-                                $"\n{rast.name}, {raststo} руб, {rastmas} г, {rastpacket1}" +
-                                $"\n{kap.name}, {kapsto} руб, {kapmas} г, {kappacket1}");
-
-             richTextBox2.Text = ($"" +
-                                $"{myk.name}, {mykasto} руб, {mykamas} г, {mykpacket1} {mykpacket2} {mykpacket3} {mykpacket4}" +
-                                $"\n{dro.name}, {drosto} руб, {dromas} г, {dropacket1} {dropacket2}" +
-                                $"\n{sah.name}, {sahsto} руб, {sahmas} г, {dropacket1}" +
-                                $"\n{sol.name}, {solsto} руб, {solmas} г, {solpacket1}" +
-                                $"\n{mil.name}, {milsto} руб, {milmas} г, {milpacket1}" +
-                                $"\n{yai.name}, {yaisto} руб, {yaimas} г, {yaipacket1} {yaipacket2}" +
-                                $"\n{sli.name}, {slisto} руб, {slimas} г, {slipacket1} {slipacket2}" +
-                                $"\n{rast.name}, {raststo} руб, {rastmas} г, {rastpacket1}" +
-                                $"\n{mya.name}, {myasto} руб, {myamas} г, {myapacket1}");
-
-
-            */
+            //-----------------------------------------
+            //Вывод
+            //-----------------------------------------
 
             switch (comboBox1.Text)
             {
                 case "Без начинки":
 
                     richTextBox1.Text = ($"" +
-                        $" Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\n Сухие дрожжи - {droj} г" +
-                        $"\n Сахар - {sahar} г" +
-                        $"\n Соль - {soli} г" +
-                        $"\n Молоко - {milk} мл." +
+                        $" Мука - {myka} {mykaraz1}.(у вас может уйти чуть больше или меньше)" +
+                        $"\n Сухие дрожжи - {droj} {droraz1}." +
+                        $"\n Сахар - {sahar} {sahraz1}." +
+                        $"\n Соль - {soli} {solraz1}." +
+                        $"\n Молоко - {milk} {milraz1}." +
                         $"\n Яйцо - {yaizo} шт." +
-                        $"\n Сливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\n Растительное масло (для замеса теста) - {rastmaslo} мл");
+                        $"\n Сливочное масло - {slivmaslo} {sliraz1}. (можно заменить растительным)" +
+                        $"\n Растительное масло (для замеса теста) - {rastmaslo} {rastraz1}.");
 
                     richTextBox2.Text = ($"" +
                         $" {myk.name}" +
@@ -718,14 +909,14 @@ namespace Pirozjki_3._0
                         $"\n {raststo} руб");
 
                     richTextBox4.Text = ($"" +
-                        $" {mykamas} г" +
-                        $"\n {dromas} г" +
-                        $"\n {sahmas} г" +
-                        $"\n {solmas} г" +
-                        $"\n {milmas} г" +
-                        $"\n {yaimas} г" +
-                        $"\n {slimas} г" +
-                        $"\n {rastmas} г");
+                        $" {mykamas} {mykaraz2}." +
+                        $"\n {dromas} {droraz2}." +
+                        $"\n {sahmas} {sahraz2}." +
+                        $"\n {solmas} {solraz2}." +
+                        $"\n {milmas} {milraz2}." +
+                        $"\n {yaimas} шт." +
+                        $"\n {slimas} {sliraz2}." +
+                        $"\n {rastmas} {rastraz2}.");
 
                     richTextBox5.Text = ($"" +
                         $" {mykpacket1} мал.уп. | {mykpacket2} ср.уп. | {mykpacket3} бол. уп. | {mykpacket4} очень бол. уп." +
@@ -742,15 +933,15 @@ namespace Pirozjki_3._0
                 case "Капуста":
 
                     richTextBox1.Text = ($"" +
-                        $" Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\n Сухие дрожжи - {droj} г" +
-                        $"\n Сахар - {sahar} г" +
-                        $"\n Соль - {soli} г" +
-                        $"\n Молоко - {milk} мл." +
+                        $" Мука - {myka} {mykaraz1}.(у вас может уйти чуть больше или меньше)" +
+                        $"\n Сухие дрожжи - {droj} {droraz1}." +
+                        $"\n Сахар - {sahar} {sahraz1}." +
+                        $"\n Соль - {soli} {solraz1}." +
+                        $"\n Молоко - {milk} {milraz1}." +
                         $"\n Яйцо - {yaizo} шт." +
-                        $"\n Сливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\n Растительное масло (для замеса теста) - {rastmaslo} мл" +
-                        $"\n Капуста - {kapysta} гр");
+                        $"\n Сливочное масло - {slivmaslo} {sliraz1}. (можно заменить растительным)" +
+                        $"\n Растительное масло (для замеса теста) - {rastmaslo} {rastraz1}." +
+                        $"\n Капуста - {kapysta} {kapraz1}.");
 
                     richTextBox2.Text = ($"" +
                         $" {myk.name}" +
@@ -775,15 +966,15 @@ namespace Pirozjki_3._0
                         $"\n {kapsto} руб");
 
                     richTextBox4.Text = ($"" +
-                        $" {mykamas} г" +
-                        $"\n {dromas} г" +
-                        $"\n {sahmas} г" +
-                        $"\n {solmas} г" +
-                        $"\n {milmas} г" +
-                        $"\n {yaimas} г" +
-                        $"\n {slimas} г" +
-                        $"\n {rastmas} г" +
-                        $"\n {kapmas} г");
+                        $" {mykamas} {mykaraz2}." +
+                        $"\n {dromas} {droraz2}." +
+                        $"\n {sahmas} {sahraz2}." +
+                        $"\n {solmas} {solraz2}." +
+                        $"\n {milmas} {milraz2}." +
+                        $"\n {yaimas} шт." +
+                        $"\n {slimas} {sliraz2}." +
+                        $"\n {rastmas} {rastraz2}." +
+                        $"\n {kapmas} {kapraz2}.");
 
                     richTextBox5.Text = ($"" +
                         $" {mykpacket1} мал.уп. | {mykpacket2} ср.уп. | {mykpacket3} бол. уп. | {mykpacket4} очень бол. уп." +
@@ -801,15 +992,15 @@ namespace Pirozjki_3._0
                 case "Мясо":
 
                     richTextBox1.Text = ($"" +
-                        $" Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\n Сухие дрожжи - {droj} г" +
-                        $"\n Сахар - {sahar} г" +
-                        $"\n Соль - {soli} г" +
-                        $"\n Молоко - {milk} мл." +
+                        $" Мука - {myka} {mykaraz1}.(у вас может уйти чуть больше или меньше)" +
+                        $"\n Сухие дрожжи - {droj} {droraz1}." +
+                        $"\n Сахар - {sahar} {sahraz1}." +
+                        $"\n Соль - {soli} {solraz1}." +
+                        $"\n Молоко - {milk} {milraz1}." +
                         $"\n Яйцо - {yaizo} шт." +
-                        $"\n Сливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\n Растительное масло (для замеса теста) - {rastmaslo} мл" +
-                        $"\n Мясо - {myaso} гр");
+                        $"\n Сливочное масло - {slivmaslo} {sliraz1}. (можно заменить растительным)" +
+                        $"\n Растительное масло (для замеса теста) - {rastmaslo} {rastraz1}." +
+                        $"\n Мясо - {myaso} {myaraz1}.");
 
                     richTextBox2.Text = ($"" +
                         $" {myk.name}" +
@@ -834,15 +1025,15 @@ namespace Pirozjki_3._0
                         $"\n {myasto} руб");
 
                     richTextBox4.Text = ($"" +
-                        $" {mykamas} г" +
-                        $"\n {dromas} г" +
-                        $"\n {sahmas} г" +
-                        $"\n {solmas} г" +
-                        $"\n {milmas} г" +
-                        $"\n {yaimas} г" +
-                        $"\n {slimas} г" +
-                        $"\n {rastmas} г" +
-                        $"\n {myamas} г");
+                        $" {mykamas} {mykaraz2}." +
+                        $"\n {dromas} {droraz2}." +
+                        $"\n {sahmas} {sahraz2}." +
+                        $"\n {solmas} {solraz2}." +
+                        $"\n {milmas} {milraz2}." +
+                        $"\n {yaimas} шт." +
+                        $"\n {slimas} {sliraz2}." +
+                        $"\n {rastmas} {rastraz2}." +
+                        $"\n {myamas} {myaraz2}.");
 
                     richTextBox5.Text = ($"" +
                         $" {mykpacket1} мал.уп. | {mykpacket2} ср.уп. | {mykpacket3} бол. уп. | {mykpacket4} очень бол. уп." +
@@ -860,15 +1051,15 @@ namespace Pirozjki_3._0
                 case "Повидло":
 
                     richTextBox1.Text = ($"" +
-                        $" Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\n Сухие дрожжи - {droj} г" +
-                        $"\n Сахар - {sahar} г" +
-                        $"\n Соль - {soli} г" +
-                        $"\n Молоко - {milk} мл." +
+                        $" Мука - {myka} {mykaraz1}.(у вас может уйти чуть больше или меньше)" +
+                        $"\n Сухие дрожжи - {droj} {droraz1}." +
+                        $"\n Сахар - {sahar} {sahraz1}." +
+                        $"\n Соль - {soli} {solraz1}." +
+                        $"\n Молоко - {milk} {milraz1}." +
                         $"\n Яйцо - {yaizo} шт." +
-                        $"\n Сливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\n Растительное масло (для замеса теста) - {rastmaslo} мл" +
-                        $"\n Повидло - {povidlo} мл");
+                        $"\n Сливочное масло - {slivmaslo} {sliraz1}. (можно заменить растительным)" +
+                        $"\n Растительное масло (для замеса теста) - {rastmaslo} {rastraz1}." +
+                        $"\n Повидло - {povidlo} {povraz1}.");
 
                     richTextBox2.Text = ($"" +
                         $" {myk.name}" +
@@ -893,15 +1084,15 @@ namespace Pirozjki_3._0
                         $"\n {povsto} руб");
 
                     richTextBox4.Text = ($"" +
-                        $" {mykamas} г" +
-                        $"\n {dromas} г" +
-                        $"\n {sahmas} г" +
-                        $"\n {solmas} г" +
-                        $"\n {milmas} г" +
-                        $"\n {yaimas} г" +
-                        $"\n {slimas} г" +
-                        $"\n {rastmas} г" +
-                        $"\n {povmas} г");
+                        $" {mykamas} {mykaraz2}." +
+                        $"\n {dromas} {droraz2}." +
+                        $"\n {sahmas} {sahraz2}." +
+                        $"\n {solmas} {solraz2}." +
+                        $"\n {milmas} {milraz2}." +
+                        $"\n {yaimas} шт." +
+                        $"\n {slimas} {sliraz2}." +
+                        $"\n {rastmas} {rastraz2}." +
+                        $"\n {povmas} {povraz1}.");
 
                     richTextBox5.Text = ($"" +
                         $" {mykpacket1} мал.уп. | {mykpacket2} ср.уп. | {mykpacket3} бол. уп. | {mykpacket4} очень бол. уп." +
@@ -919,15 +1110,15 @@ namespace Pirozjki_3._0
                 case "Лук и Яйцо":
 
                     richTextBox1.Text = ($"" +
-                        $" Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\n Сухие дрожжи - {droj} г" +
-                        $"\n Сахар - {sahar} г" +
-                        $"\n Соль - {soli} г" +
-                        $"\n Молоко - {milk} мл." +
+                        $" Мука - {myka} {mykaraz1}.(у вас может уйти чуть больше или меньше)" +
+                        $"\n Сухие дрожжи - {droj} {droraz1}." +
+                        $"\n Сахар - {sahar} {sahraz1}." +
+                        $"\n Соль - {soli} {solraz1}." +
+                        $"\n Молоко - {milk} {milraz1}." +
                         $"\n Яйцо - {yaizo} шт." +
-                        $"\n Сливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\n Растительное масло (для замеса теста) - {rastmaslo} мл" +
-                        $"\n Лук - {lyk} гр");
+                        $"\n Сливочное масло - {slivmaslo} {sliraz1}. (можно заменить растительным)" +
+                        $"\n Растительное масло (для замеса теста) - {rastmaslo} {rastraz1}." +
+                        $"\n Лук - {lyk} {lyraz1}.");
 
                     richTextBox2.Text = ($"" +
                         $" {myk.name}" +
@@ -952,15 +1143,15 @@ namespace Pirozjki_3._0
                         $"\n {lyksto} руб");
 
                     richTextBox4.Text = ($"" +
-                        $" {mykamas} г" +
-                        $"\n {dromas} г" +
-                        $"\n {sahmas} г" +
-                        $"\n {solmas} г" +
-                        $"\n {milmas} г" +
-                        $"\n {yaimas} г" +
-                        $"\n {slimas} г" +
-                        $"\n {rastmas} г" +
-                        $"\n {lykmas} г");
+                        $" {mykamas} {mykaraz2}." +
+                        $"\n {dromas} {droraz2}." +
+                        $"\n {sahmas} {sahraz2}." +
+                        $"\n {solmas} {solraz2}." +
+                        $"\n {milmas} {milraz2}." +
+                        $"\n {yaimas} шт." +
+                        $"\n {slimas} {sliraz2}." +
+                        $"\n {rastmas} {rastraz2}." +
+                        $"\n {lykmas} {lyraz2}.");
 
                     richTextBox5.Text = ($"" +
                         $" {mykpacket1} мал.уп. | {mykpacket2} ср.уп. | {mykpacket3} бол. уп. | {mykpacket4} очень бол. уп." +
@@ -978,15 +1169,15 @@ namespace Pirozjki_3._0
                 case "Картофель":
 
                     richTextBox1.Text = ($"" +
-                        $"Мука - {myka} г.(у вас может уйти чуть больше или меньше)" +
-                        $"\nСухие дрожжи - {droj} г" +
-                        $"\nСахар - {sahar} г" +
-                        $"\nСоль - {soli} г" +
-                        $"\nМолоко - {milk} мл." +
-                        $"\nЯйцо - {yaizo} шт." +
-                        $"\nСливочное масло - {slivmaslo} г. (можно заменить растительным)" +
-                        $"\nРастительное масло (для замеса теста) - {rastmaslo} мл" +
-                        $"\nКартофель - {potato} гр");
+                        $" Мука - {myka} {mykaraz1}.(у вас может уйти чуть больше или меньше)" +
+                        $"\n Сухие дрожжи - {droj} {droraz1}." +
+                        $"\n Сахар - {sahar} {sahraz1}." +
+                        $"\n Соль - {soli} {solraz1}." +
+                        $"\n Молоко - {milk} {milraz1}." +
+                        $"\n Яйцо - {yaizo} шт." +
+                        $"\n Сливочное масло - {slivmaslo} {sliraz1}. (можно заменить растительным)" +
+                        $"\n Растительное масло (для замеса теста) - {rastmaslo} {rastraz1}." +
+                        $"\nКартофель - {potato} {potraz1}.");
 
                     richTextBox2.Text = ($"" +
                         $" {myk.name}" +
@@ -1011,15 +1202,15 @@ namespace Pirozjki_3._0
                         $"\n {potsto} руб");
 
                     richTextBox4.Text = ($"" +
-                        $" {mykamas} г" +
-                        $"\n {dromas} г" +
-                        $"\n {sahmas} г" +
-                        $"\n {solmas} г" +
-                        $"\n {milmas} г" +
-                        $"\n {yaimas} г" +
-                        $"\n {slimas} г" +
-                        $"\n {rastmas} г" +
-                        $"\n {potmas} г");
+                        $" {mykamas} {mykaraz2}." +
+                        $"\n {dromas} {droraz2}." +
+                        $"\n {sahmas} {sahraz2}." +
+                        $"\n {solmas} {solraz2}." +
+                        $"\n {milmas} {milraz2}." +
+                        $"\n {yaimas} шт." +
+                        $"\n {slimas} {sliraz2}." +
+                        $"\n {rastmas} {rastraz2}." +
+                        $"\n {potmas} {potraz2}.");
 
                     richTextBox5.Text = ($"" +
                         $" {mykpacket1} мал.уп. | {mykpacket2} ср.уп. | {mykpacket3} бол. уп. | {mykpacket4} очень бол. уп." +
