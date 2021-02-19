@@ -42,22 +42,6 @@ namespace Pirozjki_3._0
             }
         }
 
-        /*
-        class okr
-        {
-            public string telo;
-            public string par;
-            public int raz;
-
-            public okr(string t, string p, int r)
-            {
-                telo = t;
-                par = p;
-                raz = r;
-            }
-        }
-        */
-
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -68,30 +52,15 @@ namespace Pirozjki_3._0
                 return;
             }
 
-            int x = Convert.ToInt32(textBox1.Text);
+            string z = textBox2.Text;
 
-            /*
-            //-----------------------------------------
-            //ОКРУГЛЕНИЕ
-            //-----------------------------------------
-
-            List<okr> okrug = new List<okr>();
-
-            okrug.Add(new okr("Твердая", "г", 1));
-            okrug.Add(new okr("Твердая", "кг", 1000));
-
-            okrug.Add(new okr("Жидкость", "мл", 1));
-            okrug.Add(new okr("Жидкость", "л", 1000));
-
-            okr mykraz = okrug.FindAll(item => item.telo == "Твердая").Find(item => item.raz >= 0);
-            mykraz = okrug.FindAll(item => item.telo == "Твердая").Find(item => item.raz >= 1000);
-
-            if ()
+            if (z == "")
             {
-
+                return;
             }
 
-            */
+            int x = Convert.ToInt32(textBox1.Text);
+            int naz = Convert.ToInt32(textBox2.Text);
 
             //-----------------------------------------
             //ПОДСЧЕТ ВСЕГО
@@ -871,6 +840,12 @@ namespace Pirozjki_3._0
             else potraz2 = "г";
 
             //-----------------------------------------
+            //Цены
+            //-----------------------------------------
+
+            double zeni = mykasto + drosto + sahsto + solsto + milsto + yaisto + slisto + raststo;
+
+            //-----------------------------------------
             //Вывод
             //-----------------------------------------
 
@@ -927,6 +902,20 @@ namespace Pirozjki_3._0
                         $"\n {yaipacket1} мал.уп. | {yaipacket2} бол. уп." +
                         $"\n {slipacket1} мал.уп. | {slipacket2} бол. уп." +
                         $"\n {rastpacket1} уп.");
+
+                    richTextBox7.Text = ($"{(zeni)} руб");
+                    richTextBox8.Text = ($"{((zeni) / x):0.00} руб");
+
+                    if (naz != 0)
+                    {
+                        richTextBox9.Text = ($"{(((zeni / x) * (naz + 100)) / 100):0.00} руб");
+                        richTextBox10.Text = ($"{((((zeni / x) * (naz + 100)) / 100) - (zeni / x)):0.00} руб");
+                    }
+                    else 
+                    {
+                        richTextBox9.Text = ($"{(zeni / x):0.00} руб");
+                        richTextBox10.Text = ($"0");
+                    }
 
                     break;
 
@@ -987,6 +976,20 @@ namespace Pirozjki_3._0
                         $"\n {rastpacket1} уп." +
                         $"\n {kappacket1} шт.");
 
+                    richTextBox7.Text = ($"{(zeni + kapsto)} руб");
+                    richTextBox8.Text = ($"{((zeni + kapsto) / x):0.00} руб");
+
+                    if (naz != 0)
+                    {
+                        richTextBox9.Text = ($"{((((zeni + kapsto) / x) * (naz + 100)) / 100):0.00} руб");
+                        richTextBox10.Text = ($"{(((((zeni + kapsto) / x) * (naz + 100)) / 100) - ((zeni + kapsto) / x)):0.00} руб");
+                    }
+                    else
+                    {
+                        richTextBox9.Text = ($"{((zeni + kapsto) / x):0.00} руб");
+                        richTextBox10.Text = ($"0");
+                    }
+
                     break;
 
                 case "Мясо":
@@ -1045,6 +1048,20 @@ namespace Pirozjki_3._0
                         $"\n {slipacket1} мал.уп. | {slipacket2} бол. уп." +
                         $"\n {rastpacket1} уп." +
                         $"\n {myapacket1} уп.");
+
+                    richTextBox7.Text = ($"{(zeni + myasto)} руб");
+                    richTextBox8.Text = ($"{((zeni + myasto) / x):0.00} руб");
+
+                    if (naz != 0)
+                    {
+                        richTextBox9.Text = ($"{((((zeni + myasto) / x) * (naz + 100)) / 100):0.00} руб");
+                        richTextBox10.Text = ($"{(((((zeni + myasto) / x) * (naz + 100)) / 100) - ((zeni + myasto) / x)):0.00} руб");
+                    }
+                    else
+                    {
+                        richTextBox9.Text = ($"{((zeni + myasto) / x):0.00} руб");
+                        richTextBox10.Text = ($"0");
+                    }
 
                     break;
 
@@ -1105,6 +1122,20 @@ namespace Pirozjki_3._0
                         $"\n {rastpacket1} уп." +
                         $"\n {povpacket1} уп.");
 
+                    richTextBox7.Text = ($"{(zeni + povsto)} руб");
+                    richTextBox8.Text = ($"{((zeni + povsto) / x):0.00} руб");
+
+                    if (naz != 0)
+                    {
+                        richTextBox9.Text = ($"{((((zeni + povsto) / x) * (naz + 100)) / 100):0.00} руб");
+                        richTextBox10.Text = ($"{(((((zeni + povsto) / x) * (naz + 100)) / 100) - ((zeni + povsto) / x)):0.00} руб");
+                    }
+                    else
+                    {
+                        richTextBox9.Text = ($"{((zeni + povsto) / x):0.00} руб");
+                        richTextBox10.Text = ($"0");
+                    }
+
                     break;
 
                 case "Лук и Яйцо":
@@ -1163,6 +1194,20 @@ namespace Pirozjki_3._0
                         $"\n {slipacket1} мал.уп. | {slipacket2} бол. уп." +
                         $"\n {rastpacket1} уп." +
                         $"\n {lykpacket1} уп.");
+
+                    richTextBox7.Text = ($"{(zeni + lyksto)} руб");
+                    richTextBox8.Text = ($"{((zeni + lyksto) / x):0.00} руб");
+
+                    if (naz != 0)
+                    {
+                        richTextBox9.Text = ($"{((((zeni + lyksto) / x) * (naz + 100)) / 100):0.00} руб");
+                        richTextBox10.Text = ($"{(((((zeni + lyksto) / x) * (naz + 100)) / 100) - ((zeni + lyksto) / x)):0.00} руб");
+                    }
+                    else
+                    {
+                        richTextBox9.Text = ($"{((zeni + lyksto) / x):0.00} руб");
+                        richTextBox10.Text = ($"0");
+                    }
 
                     break;
 
@@ -1223,10 +1268,22 @@ namespace Pirozjki_3._0
                         $"\n {rastpacket1} уп." +
                         $"\n {potpacket1} уп.");
 
+                    richTextBox7.Text = ($"{(zeni + potsto)} руб");
+                    richTextBox8.Text = ($"{((zeni + potsto) / x):0.00} руб");
+
+                    if (naz != 0)
+                    {
+                        richTextBox9.Text = ($"{((((zeni + potsto) / x) * (naz + 100)) / 100):0.00} руб");
+                        richTextBox10.Text = ($"{(((((zeni + potsto) / x) * (naz + 100)) / 100) - ((zeni + potsto) / x)):0.00} руб");
+                    }
+                    else
+                    {
+                        richTextBox9.Text = ($"{((zeni + potsto) / x):0.00} руб");
+                        richTextBox10.Text = ($"0");
+                    }
+
                     break;
             }
-
-
         }
     }
 }
