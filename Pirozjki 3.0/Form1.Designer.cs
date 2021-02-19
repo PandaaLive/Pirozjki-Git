@@ -314,7 +314,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label11.Location = new System.Drawing.Point(9, 652);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(730, 85);
+            this.label11.Size = new System.Drawing.Size(731, 85);
             this.label11.TabIndex = 26;
             this.label11.Text = resources.GetString("label11.Text");
             // 
@@ -349,8 +349,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Пирож-3000";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,0 +1,10 @@
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\bin\Release\Pirozjki 3.0.exe.config
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\bin\Release\Pirozjki 3.0.exe
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\bin\Release\Pirozjki 3.0.pdb
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki 3.0.csprojAssemblyReference.cache
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki_3._0.Form1.resources
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki_3._0.Properties.Resources.resources
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki 3.0.csproj.GenerateResource.cache
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki 3.0.csproj.CoreCompileInputs.cache
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki 3.0.exe
+D:\Pirozjki\Pirozjki 3.0\Pirozjki 3.0\obj\Release\Pirozjki 3.0.pdb
