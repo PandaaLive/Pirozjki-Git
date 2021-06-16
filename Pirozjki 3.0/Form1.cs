@@ -401,7 +401,7 @@ namespace Pirozjki_3._0
                 double yaizaotvar = x * 0.3;
                 yaizo = yaizo + yaizaotvar;
             } //При выборе ""Лук и Яйцо"" добавляются яйца
-
+             
             double yaimas = 0;
             double yaisto = 0;
 

@@ -69,7 +69,7 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.NavajoWhite;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.richTextBox1.Location = new System.Drawing.Point(12, 343);
+            this.richTextBox1.Location = new System.Drawing.Point(9, 150);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(517, 187);
             this.richTextBox1.TabIndex = 1;
@@ -91,7 +91,7 @@
             // 
             this.richTextBox2.BackColor = System.Drawing.Color.NavajoWhite;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.richTextBox2.Location = new System.Drawing.Point(12, 150);
+            this.richTextBox2.Location = new System.Drawing.Point(9, 343);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(517, 187);
             this.richTextBox2.TabIndex = 3;
@@ -350,6 +350,8 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1187, 784);
+            this.MinimumSize = new System.Drawing.Size(1187, 784);
             this.Name = "Form1";
             this.Text = "Пирож-3000";
             this.Load += new System.EventHandler(this.Form1_Load);
